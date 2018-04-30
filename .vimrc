@@ -181,22 +181,18 @@ endf
 
 map <F5> :call RunApp()<CR>
 func! RunApp()
-	exec "W"
+	exec "w"
 	if &filetype == 'c'
 		exec "!gcc % -o %<"
 		exec "!time ./%<"
-	endif
 	elseif &filetype == 'cpp'
 		exec "!g++ % -o %<"
 		exec "!time ./%<"
-	endif
 	elseif &filetype == 'java'
 		exec "!javac %"
 		exec "!time java ./%<"
-	endif
 	elseif &filetype == 'html'
 		exec "!firefox % &"
-	endif
 	elseif &filetype == 'python'
 		exec "!time python %"
 	endif
